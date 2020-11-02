@@ -8,38 +8,36 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Chirpy                          # the main title
+title: Xiao Fan (樊潇)                          # the main title
 
-tagline: A text-focused Jekyll theme.  # it will display as the sub-title
+tagline: Lots of hair  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  A minimal, portfolio, sidebar,
-  bootstrap Jekyll theme with responsive web design
-  and focuses on text presentation.
+  Welcome to my personal webpage! I'm an incoming Caltech EE student and a newbie programmer as well. Hopefully this page logs my advances towards excellence.
 
 # Replace with the website url, e.g. 'https://username.github.io'
-url: 'protocol://domain'
+url: 'https://tommyfan34.github.io'
 
-author: your_full_name                  # change to your full name
+author: Xiao Fan                  # change to your full name
 
-avatar: /assets/img/sample/avatar.jpg   # support internet resources
+avatar: /assets/img/sample/me.JPG   # support internet resources
 
 github:
-  username: github_username             # change to your github username
+  username: tommyfan34             # change to your github username
 
 twitter:
-  username: twitter_username            # change to your twitter username
+  username: tommyfan34            # change to your twitter username
 
 social:
-  name: your_full_name                  # it will shows as the copyright owner in Footer
-  email: example@doamin.com             # change to your email address
+  name: Xiao_Fan                  # it will shows as the copyright owner in Footer
+  email: tommyfanzju@gmail.com             # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username      # change to your twitter homepage
-    - https://github.com/username       # change to your github homepage
+    - https://twitter.com/tommyfan34      # change to your twitter homepage
+    - https://github.com/tommyfan34       # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/xiao-fan-6a21b7171
 
 google_site_verification: google_meta_tag_verification # change to your verification string
 
@@ -78,7 +76,7 @@ disqus:
 #
 #     dark   - Use the dark color scheme
 #
-theme_mode: dual
+theme_mode: dark
 
 # boolean type, global switch for ToC in posts.
 toc: true
