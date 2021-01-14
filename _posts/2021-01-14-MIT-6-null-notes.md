@@ -3,7 +3,7 @@ title: MIT 6.null Lecture Notes
 author: Xiao Fan
 date: 2021-01-14 18:32 +0800
 categories: [lecture notes]
-tags: Others
+tags: [Others]
 math: true
 mermaid: true
 ---
