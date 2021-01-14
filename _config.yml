@@ -40,8 +40,7 @@ social:
     - https://www.linkedin.com/in/xiao-fan-6a21b7171
 
 google_site_verification: google_meta_tag_verification # change to your verification string
-
-#--------------------------
+# --------------------------
 
 
 # Only if your site type is GitHub Project sites and doesn't have a custom domain,
@@ -67,31 +66,38 @@ disqus:
   shortname: ''    # Fill with your Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 
-# Prefer color scheme setting, available values:
+# Prefer color scheme setting.
 #
-#     dual   - Follow the system prefer color by default, and a toggle will display
-#              in the left bottom of Sidebar, which used for switch the theme between dark and light.
+# Note: Keep empty will follow the system prefer color by default,
+# and there will be a toggle to switch the theme between dark and light
+# on the bottom left of the sidebar.
+#
+# Available options:
 #
 #     light  - Use the light color scheme
 #
 #     dark   - Use the dark color scheme
 #
 theme_mode: dark
+# The CDN endpoint for images.
+# Notice that once it is assigned, the CDN url
+# will be added to all image (site avatar & posts' images) paths starting with '/'
+#
+# e.g. 'https://cdn.com'
+img_cdn: ''
 
-# boolean type, global switch for ToC in posts.
+# the avatar on sidebar, support local or CORS resources
+avatar: https://cdn.jsdelivr.net/gh/cotes2020/chirpy-images/commons/avatar.jpg
+
+# boolean type, the global switch for ToC in posts.
 toc: true
 
 paginate: 10
 
-markdown: kramdown
-
-highlighter: rouge
-
 kramdown:
-  input: GFM
   syntax_highlighter: rouge
-  syntax_highlighter_opts: # Rouge Options › https://github.com/jneen/rouge#full-options
-    css_class: 'highlight'
+  syntax_highlighter_opts:   # Rouge Options › https://github.com/jneen/rouge#full-options
+    css_class: highlight
     # default_lang: console
     span:
       line_numbers: false
@@ -103,16 +109,21 @@ kramdown:
 # or you think you're smart enough to change other relevant URLs within this template.
 permalink: /posts/:title/
 
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+
 defaults:
   -
     scope:
-      path: ""          # An empty string here means all files in the project
+      path: ''          # An empty string here means all files in the project
       type: posts
     values:
       layout: post
       comments: true    # Enable comments in posts.
       toc: true         # Display TOC column in posts.
-      location: Post
       breadcrumb:
         -
           label: Posts
@@ -124,10 +135,15 @@ defaults:
       comments: false
   -
     scope:
+      path: index.html
+    values:
+      breadcrumb:
+        -
+          label: Posts
+  -
+    scope:
       path: tags
     values:
-      tab_active: Tags
-      location: Tag
       breadcrumb:
         -
           label: Home
@@ -139,8 +155,6 @@ defaults:
     scope:
       path: categories
     values:
-      tab_active: Categories
-      location: Category
       breadcrumb:
         -
           label: Home
@@ -150,7 +164,8 @@ defaults:
           url: /tabs/categories/
   -
     scope:
-      path: tabs
+      path: ''
+      type: tabs             # see `site.collections`
     values:
       layout: page
       dynamic_title: true    # Hide title in mobile screens.
@@ -158,7 +173,6 @@ defaults:
         -
           label: Home
           url: /
-
 
 sass:
   sass_dir: /assets/css
@@ -171,10 +185,10 @@ compress_html:
   profile: false
   blanklines: false
   ignore:
-    envs: []
+    envs: [development]
 
 exclude:
-  - vendor        # Avoid Jekyll mistakenly read the vendor directory on Travis-CI's VM .
+  - vendor
   - Gemfile.lock
   - Gemfile
   - tools
@@ -182,17 +196,11 @@ exclude:
   - README.md
   - LICENSE
 
-sitemap_exclude:  # Sitemap will exclude the following items.
-  fuzzy:
-    - /assets/
-  accurate:
-    - /norobots/
-    - /tabs/
-    - /categories/
-    - /tags/
-    - /posts/
-    - 404.html
-    - feed.xml
-    - sitemap.xml
-    - robots.txt
-    - redirects.json
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
