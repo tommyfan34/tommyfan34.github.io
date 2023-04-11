@@ -2,7 +2,7 @@
 
 title: LCS & LPS Problem
 author: Xiao Fan
-date: 2021-07-27 11:12 +0800
+date: 2021-07-27
 categories: [leetcode notes]
 tags: [leetcode]
 math: true

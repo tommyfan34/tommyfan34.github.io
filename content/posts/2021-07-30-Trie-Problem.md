@@ -1,7 +1,7 @@
 ---
 title: Trie Problem
 author: Xiao Fan
-date: 2021-07-30 21:26 +0800
+date: 2021-07-30
 categories: [leetcode notes]
 tags: [leetcode]
 math: true
